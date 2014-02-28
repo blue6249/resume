@@ -1,0 +1,198 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage[scale=0.75]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+% Define \cvdoublecolumn, which sets its arguments in two columns without any labels
+
+\newcommand{\cvdoublecolumn}[2]{
+  \cvline{}{
+    \begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#1\end{minipage}
+    \hfill
+    \begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#2\end{minipage}
+    }
+}
+
+% usage: \cvreference{name}{address line 1}{address line 2}{address line 3}{address line 4}{e-mail address}{phone number}
+% Everything but the name is optional
+% If \addresssymbol, \emailsymbol or \phonesymbol are specified, they will be used.
+% (Per default, \addresssymbol isn't specified, the other two are specified.)
+% If you don't like the symbols, remove them from the following code, including the tilde ~ (space).
+
+\newcommand{\cvreference}[7]{
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}
+    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}
+    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+
+
+\makeatletter
+\@itempenalty=-51
+\makeatother
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{James} % Your first name
+\familyname{McGuire} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curriculum Vitae}
+\address{12235 Vance Jackson Rd. Apt. 1711}{San Antonio, TX 78230}
+\phone{(479) 633 7565}
+\email{james@sadbox.org}
+\homepage{sadbox.org}{sadbox.org} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+%\extrainfo{additional information}
+%\photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%\quote{"A witty and playful quotation" - John Smith}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+%\section{Education}
+%
+%\cventry{2011--2012}{Masters of Commerce}{The University of California}{Berkeley}{\textit{GPA -- 8.0}}{First Class Honours}  % Arguments not required can be left empty
+%\cventry{2007--2010}{Bachelor of Business Studies}{The University of California}{Berkeley}{\textit{GPA -- 7.5}}{Specialized in Commerce}
+%
+%\section{Masters Thesis}
+%
+%\cvitem{Title}{\emph{Money Is The Root Of All Evil -- Or Is It?}}
+%\cvitem{Supervisors}{Professor James Smith \& Associate Professor Jane Smith}
+%\cvitem{Description}{This thesis explored the idea that money has been the cause of untold anguish and suffering in the world. I found that it has, in fact, not.}
+
+%----------------------------------------------------------------------------------------
+%	CORE SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Core Technical Skills}
+
+\cvitem{Systems}{ESX/VMWare, RHEL/CENTOS 6, Debian Based Distributions}
+\cvitem{Languages}{\textsc{go}, \textsc{python}, \textsc{ruby}, \textsc{perl}}
+\cvitem{Specialties}{Linux Administration, Documentation, Automation, New-hire training}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\cventry{2013--Present}{Linux System Administrator}{\textsc{Consert}}{San Antonio, TX}{}{Worked on a team of two to provide all support for the Linux infrastructure. In my spare time I assist the development team by building an maintaining a large portion of our inventory management web application.
+\begin{itemize}
+\item Development
+\begin{itemize}
+\item Maintain and develop inventory management application built using \textsc{Ruby on Rails}
+\item Develop scripts for monitoring via Nagios
+\item Bug fixes and modernization of legacy perl code base
+\end{itemize}
+\item System Administration
+\begin{itemize}
+\item Manage server configuration through Puppet
+\item Monitor infrastructure via Nagios with CheckMK
+\item Configuration of NetApp storage
+\item Maintain OpenVPN for remote access
+\item Centralized user administration through OpenLDAP
+\item Provision and manage virtual machines in VMWare vCenter cluster
+\end{itemize}
+\end{itemize}}
+
+\cventry{2012--2013}{NOC Engineer}{\textsc{Consert}}{San Antonio, TX}{}{Managed a network of 10000+ embedded Linux devices deployed to customer's homes.
+\begin{itemize}
+\item Development
+\begin{itemize}
+\item Wrote shell scripts that were implemented in embedded environments for automated recovery of lost devices
+\item Headed, completed, and support a project written in Python for automating part of a customer's testing work flow
+\item Built a wiki bot in Perl for automating most of my team's shift hand-off process
+\end{itemize}
+\item System Administration
+\begin{itemize}
+\item Built and supported the company chat server using ejabberd with LDAP integration
+\item Administered RHEL Servers and embedded Linux devices
+\item Supported approximately 11000 servers and devices with a team of 10
+\end{itemize}
+\item Documentation
+\begin{itemize}
+\item Major contributor to the company wiki
+\item Assisted others in learning wiki markup and walked them through transferring documentation
+\end{itemize}
+\end{itemize}}
+
+%------------------------------------------------
+
+\cventry{2010--2012}{Support Desk Year Round Intern}{\textsc{Hewlett Packard}}{Bentonville, AR}{}{Supported a very wide range of HP equipment deployed in Walmart Stores and Datacenters. My team was responsible for everything from a photo kiosk to mission critical mainframes.
+\begin{itemize}
+\item Development
+\begin{itemize}
+\item Wrote scripts to automate common tasks and gather information
+\item Redesigned existing legacy tools for compatibility with newer operating systems, and fixed a number of bugs
+\end{itemize}
+\item Support Technician 
+\begin{itemize}
+\item Supported servers in retail stores, distribution centers, and datacenters
+\item Administered HP-UX, Windows, Linux, and VMWare servers
+\item Worked with developers to track down problems
+\item Supported approximately 7000 servers with a team of 25
+\end{itemize}
+\item Special Projects
+\begin{itemize}
+\item Helped refine the process for imaging VMWare clusters
+\item Assisted technicians with hardware installs
+\end{itemize}
+\end{itemize}}
+
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\section{References}
+
+\cvdoublecolumn
+{\cvreference{Jon Duarte} {Tier 2 Support} {Consert} {} {} {jduarte@consert.com} {(210) 827-2777}}
+{\cvreference{Chad Wilson} {System Architect} {Consert} {} {} {cwilson@consert.com} {(832) 877-5333}}
+
+
+\cvdoublecolumn
+{\cvreference{Charles Witt} {NOC Lead} {Consert} {} {} {cwitt@consert.com} {(210) 787-2734}}
+{\cvreference{Aaron Miller} {Developer} {Couchbase} {} {} {} {(479) 633-7625}}
+
+\end{document}
