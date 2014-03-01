@@ -58,9 +58,11 @@
     \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
 
 
-\makeatletter
-\@itempenalty=-51
-\makeatother
+%\makeatletter
+%\@itempenalty=-51
+%\makeatother
+
+\AtBeginDocument{\recomputelengths}
 
 %----------------------------------------------------------------------------------------
 %	NAME AND CONTACT INFORMATION SECTION
@@ -108,7 +110,7 @@
 
 \cvitem{Systems}{ESX/VMWare, RHEL/CENTOS 6, Debian Based Distributions}
 \cvitem{Languages}{\textsc{go}, \textsc{python}, \textsc{ruby}, \textsc{perl}}
-\cvitem{Specialties}{Linux Administration, Documentation, Automation, New-hire training}
+\cvitem{Specialties}{Linux Administration, Documentation, Automation, New-hire training, LAMP}
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
@@ -123,6 +125,7 @@
 \item Maintain and develop inventory management application built using \textsc{Ruby on Rails}
 \item Develop scripts for monitoring via Nagios
 \item Bug fixes and modernization of legacy perl code base
+\item Various automation using python and bash
 \end{itemize}
 \item System Administration
 \begin{itemize}
@@ -132,6 +135,11 @@
 \item Maintain OpenVPN for remote access
 \item Centralized user administration through OpenLDAP
 \item Provision and manage virtual machines in VMWare vCenter cluster
+\item Manage BIND DNS
+\item Configure and deploy various Apache configurations (wsgi, phusion)
+\item Memcachd configuration
+\item Administration of RHEL6 servers
+\item Update custom packages in local yum repository
 \end{itemize}
 \end{itemize}}
 
@@ -143,6 +151,9 @@
 \item Headed, completed, and supported a project written in Python for automating part of a customer's testing work flow
 \item Built a wiki bot in Perl for automating most of my team's shift hand-off process
 \end{itemize}
+\end{itemize}}
+\cvitem{}{
+\begin{itemize}
 \item System Administration
 \begin{itemize}
 \item Built and supported the company chat server using ejabberd with LDAP integration
