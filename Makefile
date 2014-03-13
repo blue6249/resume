@@ -1,12 +1,14 @@
 all:
+	[ -f jbm_resume.pdf ] && echo "\n\nPDF already exists..." && exit 1 ; \
 	while [ $${tries:=0} -lt 5 ] && [ ! -f jbm_resume.log ] || grep -q "Rerun to get" jbm_resume.log; do \
 		pdflatex jbm_resume.tex ; \
 		tries=$$((tries + 1)) ; \
 	done ; \
 	if [ $${tries} -eq 5 ]; then \
 		echo "Could not finish PDF after 5 attempts, please check the log." ; \
+		exit 1 ; \
 	else \
-		echo -e "\n\nPDF finished after $${tries} runs." ; \
+		echo "\n\nPDF finished after $${tries} runs." ; \
 	fi
 spell:
 	aspell --mode tex check ./jbm_resume.tex
