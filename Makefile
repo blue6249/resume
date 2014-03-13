@@ -1,8 +1,13 @@
 all:
-	while [ $${tries:=0} -lt 5 ] && [ ! -f jbm_resume.log ] || grep -q "Rerun to get cross-references right." jbm_resume.log; do \
+	while [ $${tries:=0} -lt 5 ] && [ ! -f jbm_resume.log ] || grep -q "Rerun to get" jbm_resume.log; do \
 		pdflatex jbm_resume.tex ; \
 		tries=$$((tries + 1)) ; \
-	done ;
+	done ; \
+	if [ $${tries} -eq 5 ]; then \
+		echo "Could not finish PDF after 5 attempts, please check the log." ; \
+	else \
+		echo -e "\n\nPDF finished after $${tries} runs." ; \
+	fi
 spell:
 	aspell --mode tex check ./jbm_resume.tex
 publish:
