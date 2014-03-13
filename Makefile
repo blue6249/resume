@@ -1,6 +1,5 @@
 all:
-	tries=0 ; \
-	while [ $$tries -lt 5 ] && [ ! -f jbm_resume.log ] || grep -q "Rerun to get cross-references right." jbm_resume.log; do \
+	while [ $${tries:=0} -lt 5 ] && [ ! -f jbm_resume.log ] || grep -q "Rerun to get cross-references right." jbm_resume.log; do \
 		pdflatex jbm_resume.tex ; \
 		tries=$$((tries + 1)) ; \
 	done ;
