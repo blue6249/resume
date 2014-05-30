@@ -13,7 +13,7 @@ all:
 spell:
 	aspell --mode tex check ./jbm_resume.tex
 publish:
-	rsync -avhze ssh --progress ./jbm_resume.pdf sadbox:/var/www/sadbox.org/static/resume/
+	rsync -avhze ssh --progress ./jbm_resume.pdf sadbox:/tmp/jbm_resume.pdf && ssh -t sadbox sudo mv -v /tmp/jbm_resume.pdf /home/sadbox-web/static/resume/
 clean:
 	rm *.pdf *.log *.out *.aux
 clean-spell:
